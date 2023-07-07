@@ -33,7 +33,36 @@ let-env NU_PLUGIN_DIRS = [
 let-env EDITOR = "nvim"
 let-env VISUAL = "nvim"
 
-source scripts/carapace.env.nu
-source scripts/path.env.nu
-source scripts/starship.env.nu
-source scripts/zoxide.env.nu
+# env - PATH
+# Brew PATH
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+
+# Composer PATH
+let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.composer/vendor/bin'))
+
+# Composer PATH
+let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.composer/vendor/bin'))
+
+# Dvm PATH
+let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.dvm'))
+
+# local bin PATH
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/bin')
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/sbin')
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/sbin')
+
+# cargo bin
+let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
+
+# carapace completions: (https://github.com/rsteube/carapace-bin)
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+# .env - Starship prompt (starship.rs)
+let-env STARSHIP_CONFIG = $env.HOME + '/.config/starship/starship.toml'
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
+
+# .env - Zoxide (https://github.com/ajeetdsouza/zoxide)
+zoxide init nushell | save -f ~/.zoxide.nu
