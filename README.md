@@ -2,5 +2,5 @@
 
 - clone into config dir
 ```nu
-git clone https://github.com/JonasLeonhard/nushell-config/tree/main ($nu.default-config-dir)
+git clone git@github.com:JonasLeonhard/nushell-config.git ($nu.default-config-dir)
 ```
