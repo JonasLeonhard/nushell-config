@@ -481,7 +481,6 @@ let-env config = {
   ]
 }
 
-source alias.nu
 source fnm.nu
 source prompt_indicator.nu
 source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), 'scripts', 'secrets.nu'] | str join '/') , contains private env vars etc.
@@ -491,3 +490,5 @@ source zellij.nu
 source ~/.cache/carapace/init.nu
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
+
+source alias.nu # must be called after init of all plugins. Eg. zoxide init!
