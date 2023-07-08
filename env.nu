@@ -40,9 +40,6 @@ let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 # Composer PATH
 let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.composer/vendor/bin'))
 
-# Composer PATH
-let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.composer/vendor/bin'))
-
 # Dvm PATH
 let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.dvm'))
 
