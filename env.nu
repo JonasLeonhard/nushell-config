@@ -32,25 +32,18 @@ let-env NU_PLUGIN_DIRS = [
 # Configuration
 let-env EDITOR = "nvim"
 let-env VISUAL = "nvim"
+let-env PNPM_HOME = $"($env.HOME)/Library/pnpm"
 
-# env - PATH
-# Brew PATH
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
-
-# Composer PATH
-let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.composer/vendor/bin'))
-
-# Dvm PATH
-let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.dvm'))
-
-# local bin PATH
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/bin')
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/sbin')
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/sbin')
-
-# cargo bin
-let-env PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
+$env.PATH = (
+    $env.PATH
+        | split row (char esep)
+        | append "/opt/homebrew/bin"
+        | append $"($env.HOME)/.cargo/bin"
+        | append $"($env.HOME)/.composer/vendor/bin"
+        | append $"($env.HOME)/.dvm"
+        | append $env.PNPM_HOME
+        | uniq
+)
 
 # carapace completions: (https://github.com/rsteube/carapace-bin)
 mkdir ~/.cache/carapace
