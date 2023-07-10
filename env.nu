@@ -37,6 +37,10 @@ let-env PNPM_HOME = $"($env.HOME)/Library/pnpm"
 $env.PATH = (
     $env.PATH
         | split row (char esep)
+        | append "/usr/bin"
+        | append "/usr/sbin"
+        | append "/usr/local/bin"
+        | append "/usr/local/sbin"
         | append "/opt/homebrew/bin"
         | append $"($env.HOME)/.cargo/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
