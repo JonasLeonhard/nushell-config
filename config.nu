@@ -435,6 +435,16 @@ let-env config = {
       }
     }
     {
+      name: clear_screen
+      modifier: control
+      keycode: char_h
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: executehostcommand,
+        cmd: "clear"
+      }
+    }
+    {
       name: gitui
       modifier: control
       keycode: char_g # workaround for alt-e
