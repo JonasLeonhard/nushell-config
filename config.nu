@@ -392,10 +392,46 @@ let-env config = {
     {
       name: accept_history_hint_completion
       modifier: control
-      keycode: char_j
+      keycode: char_l
       mode: [emacs, vi_normal, vi_insert]
       event: {
         send: HistoryHintComplete,
+      }
+    }
+    {
+      name: menu_up
+      modifier: none
+      keycode: char_∆ # workaround for alt-k
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: MenuUp,
+      }
+    }
+    {
+      name: menu_down
+      modifier: none
+      keycode: char_º # workaround for alt-j
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: MenuDown,
+      }
+    }
+    {
+      name: history_down
+      modifier: control
+      keycode: char_j
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: PreviousHistory,
+      }
+    }
+    {
+      name: history_down
+      modifier: control
+      keycode: char_k
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: NextHistory,
       }
     }
     {
