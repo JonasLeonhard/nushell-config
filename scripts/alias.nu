@@ -12,6 +12,6 @@ def-env "cd" [path?:directory] {
   if ($path | is-empty) {
     z
   } else {
-    z ($path | str replace $env.PWD "")
+    z ($path | str replace $"($env.PWD)/" "")
   }
 }
