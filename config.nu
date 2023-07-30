@@ -4,6 +4,11 @@
 
 use theme.nu
 
+# carapace completions: (https://github.com/rsteube/carapace-bin)
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell $spans | from json
+}
+
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   # true or false to enable or disable the welcome banner at startup
@@ -109,7 +114,7 @@ $env.config = {
     external: {
       enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
       max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-      completer: null # check 'carapace_completer' above as an example
+      completer: $carapace_completer # check 'carapace_completer' above as an example
     }
   }
   filesize: {
@@ -470,8 +475,7 @@ source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), '
 source xplr.nu
 source zellij-completions.nu
 source zellij.nu
-source ~/.cache/carapace/init.nu
 source ~/.cache/starship/init.nu
-source ~/.zoxide.nu
+# source ~/.cache/zoxide/init.nu # teporary disabled for 0.83.0 - since it | length pipe is bugged
 
 source alias.nu # must be called after init of all plugins. Eg. zoxide init!

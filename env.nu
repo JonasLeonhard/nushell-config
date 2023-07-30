@@ -49,14 +49,11 @@ $env.PATH = (
         | uniq
 )
 
-# carapace completions: (https://github.com/rsteube/carapace-bin)
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
-
 # .env - Starship prompt (starship.rs)
-$env.STARSHIP_CONFIG = $env.HOME + '/.config/starship/starship.toml'
+$env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
 # .env - Zoxide (https://github.com/ajeetdsouza/zoxide)
-zoxide init nushell | save -f ~/.zoxide.nu
+mkdir ~/.cache/zoxide
+zoxide init nushell | save -f ~/.cache/zoxide/init.nu
