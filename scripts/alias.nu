@@ -1,4 +1,5 @@
 # Aliases
+alias rcd = cd
 alias cat = bat
 alias exa = exa --icons
 
