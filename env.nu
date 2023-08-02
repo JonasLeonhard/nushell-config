@@ -55,5 +55,6 @@ mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
 # .env - Zoxide (https://github.com/ajeetdsouza/zoxide)
+# install via cargo install --git https://github.com/ajeetdsouza/zoxide - the brew or cargo install version has a old version of the init.nu script
 mkdir ~/.cache/zoxide
 zoxide init nushell | save -f ~/.cache/zoxide/init.nu
