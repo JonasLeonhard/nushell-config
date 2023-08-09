@@ -32,7 +32,6 @@ $env.NU_PLUGIN_DIRS = [
 # Configuration
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
-$env.PNPM_HOME = $"($env.HOME)/Library/pnpm"
 
 $env.PATH = (
     $env.PATH
@@ -41,11 +40,12 @@ $env.PATH = (
         | append "/usr/sbin"
         | append "/usr/local/bin"
         | append "/usr/local/sbin"
+        | append "/usr/local/go/bin"
         | append "/opt/homebrew/bin"
         | append $"($env.HOME)/.cargo/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
         | append $"($env.HOME)/.dvm"
-        | append $env.PNPM_HOME
+        | append $"($env.HOME)/Library/pnpm"
         | uniq
 )
 
