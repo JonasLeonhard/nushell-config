@@ -477,5 +477,6 @@ source zellij-completions.nu
 source zellij.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
+source nnn.nu
 
 source alias.nu # must be called after init of all plugins. Eg. zoxide init!
