@@ -12,4 +12,4 @@ let SOCK = "0B"
 let OTHER = "06"
 
 $env.NNN_FCOLORS = $"($BLK)($CHR)($DIR)($EXE)($REG)($HARDLINK)($SYMLINK)($MISSING)($ORPHAN)($FIFO)($SOCK)($OTHER)"
-$env.NNN_PLUG = "o:fzopen;z:autojump;c:fzcd;"
+$env.NNN_PLUG = "o:fzopen;z:autojump;c:fzcd;p:!clear && bat $nnn"
