@@ -1,1 +1,1 @@
-source /Users/jonas/.config/broot/launcher/nushell/br
+source ~/.config/broot/launcher/nushell/br
