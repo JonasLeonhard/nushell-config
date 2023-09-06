@@ -479,5 +479,6 @@ source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
 source nnn.nu
 source broot.nu
+source parallel.nu
 
 source alias.nu # must be called after init of all plugins. Eg. zoxide init!
