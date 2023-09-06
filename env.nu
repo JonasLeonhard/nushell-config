@@ -41,12 +41,13 @@ $env.PATH = (
         | append "/usr/local/bin"
         | append "/usr/local/sbin"
         | append "/usr/local/go/bin"
-        | append "/opt/homebrew/bin"
-        | append "/home/linuxbrew/.linuxbrew/bin"
+        | append "/opt/homebrew/bin" # macos
+        | append "/home/linuxbrew/.linuxbrew/bin" # linux
         | append $"($env.HOME)/.cargo/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
         | append $"($env.HOME)/.dvm"
-        | append $"($env.HOME)/Library/pnpm"
+        | append $"($env.HOME)/Library/pnpm" # macos
+        | append $"($env.HOME)/.local/share/pnpm" # linux
         | uniq
 )
 
