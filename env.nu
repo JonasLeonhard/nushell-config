@@ -42,6 +42,7 @@ $env.PATH = (
         | append "/usr/local/sbin"
         | append "/usr/local/go/bin"
         | append "/opt/homebrew/bin"
+        | append "/home/linuxbrew/.linuxbrew/bin"
         | append $"($env.HOME)/.cargo/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
         | append $"($env.HOME)/.dvm"
