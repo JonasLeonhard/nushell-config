@@ -33,6 +33,9 @@ $env.NU_PLUGIN_DIRS = [
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 
+# Bun
+$env.BUN_INSTALL = $"($env.HOME)/.bun"
+
 $env.PATH = (
     $env.PATH
         | split row (char esep)
@@ -48,6 +51,7 @@ $env.PATH = (
         | append $"($env.HOME)/.dvm"
         | append $"($env.HOME)/Library/pnpm" # macos
         | append $"($env.HOME)/.local/share/pnpm" # linux
+        | append $"($env.BUN_INSTALL)/bin"
         | uniq
 )
 
