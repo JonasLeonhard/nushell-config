@@ -39,19 +39,20 @@ $env.BUN_INSTALL = $"($env.HOME)/.bun"
 $env.PATH = (
     $env.PATH
         | split row (char esep)
-        | append "/usr/bin"
-        | append "/usr/sbin"
-        | append "/usr/local/bin"
-        | append "/usr/local/sbin"
-        | append "/usr/local/go/bin"
-        | append "/opt/homebrew/bin" # macos
         | append "/home/linuxbrew/.linuxbrew/bin" # linux
+        | append "/opt/homebrew/bin" # macos
+        | append "/usr/bin"
+        | append "/usr/local/bin"
+        | append "/usr/local/go/bin"
+        | append "/usr/local/sbin"
+        | append "/usr/sbin"
+        | append $"($env.BUN_INSTALL)/bin"
         | append $"($env.HOME)/.cargo/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
         | append $"($env.HOME)/.dvm"
-        | append $"($env.HOME)/Library/pnpm" # macos
         | append $"($env.HOME)/.local/share/pnpm" # linux
-        | append $"($env.BUN_INSTALL)/bin"
+        | append $"($env.HOME)/.yarn/bin"
+        | append $"($env.HOME)/Library/pnpm" # macos
         | uniq
 )
 
