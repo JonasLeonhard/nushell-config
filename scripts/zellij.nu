@@ -19,7 +19,7 @@ def zellija [] {
  }
 
  if ($userSelection | str contains "(current)") {
-   $userSelection = ($userSelection | str replace -s "(current)" "" | str trim)
+   $userSelection = ($userSelection | str replace "(current)" "" | str trim)
  }
 
  mut sessionName = $userSelection
@@ -35,7 +35,7 @@ def zellija [] {
 
 def zellijk [] {
  let sessions = (zellij list-sessions)
- mut userSelection = ($sessions | (fzf --height 22% --border --prompt='Kill: ' --print-query) | lines | get -i 1 | default "" | str replace -s "(current)" "" | str trim)
+ mut userSelection = ($sessions | (fzf --height 22% --border --prompt='Kill: ' --print-query) | lines | get -i 1 | default "" | str replace "(current)" "" | str trim)
 
  # user quit fzf with esc or ctrl-c, or no session was picked
  if (($userSelection| is-empty)) {
