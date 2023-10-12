@@ -472,12 +472,10 @@ $env.config = {
 source fnm.nu
 source prompt_indicator.nu
 source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), 'scripts', 'secrets.nu'] | str join '/') , contains private env vars etc.
-source xplr.nu
 source zellij-completions.nu
 source zellij.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
-source nnn.nu
 source broot.nu
 source parallel.nu
 
