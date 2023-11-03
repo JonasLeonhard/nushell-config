@@ -9,7 +9,7 @@ def "lsg" [] {
 
 # make autocomplete work with zoxide.
 # alias cd = z does not work, as it is missing directory autocompletion
-def-env "cd" [path?:directory] {
+def --env "cd" [path?:directory] {
   if ($path | is-empty) {
     z
   } else {
