@@ -48,12 +48,12 @@ $env.PATH = (
         | append "/usr/sbin"
         | append $"($env.BUN_INSTALL)/bin"
         | append $"($env.HOME)/.cargo/bin"
-        | append $"($env.HOME)/go/bin"
         | append $"($env.HOME)/.composer/vendor/bin"
         | append $"($env.HOME)/.dvm"
         | append $"($env.HOME)/.local/share/pnpm" # linux
         | append $"($env.HOME)/.yarn/bin"
         | append $"($env.HOME)/Library/pnpm" # macos
+        | append $"($env.HOME)/go/bin"
         | uniq
 )
 
