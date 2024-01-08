@@ -382,16 +382,6 @@ $env.config = {
       }
     }
     {
-      name: xplrCd
-      modifier: control
-      keycode: char_f
-      mode: [emacs, vi_normal, vi_insert]
-      event: [{
-        send: executehostcommand,
-        cmd: "cd (xplrGetSelectionFileDirOrDir)"
-      }]
-    }
-    {
       name: accept_history_hint_completion
       modifier: control
       keycode: char_l
