@@ -6,7 +6,7 @@ use theme.nu
 
 # carapace completions: (https://github.com/rsteube/carapace-bin)
 let carapace_completer = {|spans|
-    carapace $spans.0 nushell $spans | from json
+    carapace $spans.0 nushell ...$spans | from json
 }
 
 # The default config record. This is where much of your global configuration is setup.
