@@ -45,6 +45,7 @@ $env.PATH = (
         | append "/usr/local/bin"
         | append "/usr/local/go/bin"
         | append "/usr/local/sbin"
+        | append "/opt/local/bin"
         | append "/usr/sbin"
         | append $"($env.BUN_INSTALL)/bin"
         | append $"($env.HOME)/.cargo/bin"
