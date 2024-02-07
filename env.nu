@@ -32,6 +32,7 @@ $env.NU_PLUGIN_DIRS = [
 # Configuration
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
+$env.NVIM_DEV_PATH = "~/Desktop/git_repos/jonas"
 
 # Bun
 $env.BUN_INSTALL = $"($env.HOME)/.bun"
