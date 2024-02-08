@@ -200,7 +200,7 @@ $env.config = {
             correct_cursor_pos: false
         }
         style: {
-            text: green
+            text: blue
             selected_text: {attr: r}
             description_text: yellow
             match_text: {attr: u}
