@@ -1,6 +1,6 @@
 # Nushell Config File
 #
-# version = 0.82.0
+# version = 0.90.2
 
 use theme.nu
 
@@ -175,6 +175,39 @@ $env.config = {
         }
       }
       {
+        name: ide_completion_menu
+        only_buffer_difference: false
+        marker: "󰋼 "
+        type: {
+            layout: ide
+            min_completion_width: 0,
+            max_completion_width: 50,
+            # max_completion_height: 10, # will be limited by the available lines in the terminal
+            padding: 0,
+            border: false,
+            cursor_offset: 0,
+            description_mode: "prefer_right"
+            min_description_width: 0
+            max_description_width: 50
+            max_description_height: 10
+            description_offset: 1
+            # If true, the cursor pos will be corrected, so the suggestions match up with the typed text
+            #
+            # C:\> str
+            #      str join
+            #      str trim
+            #      str split
+            correct_cursor_pos: false
+        }
+        style: {
+            text: green
+            selected_text: {attr: r}
+            description_text: yellow
+            match_text: {attr: u}
+            selected_match_text: {attr: ur}
+        }
+      }
+      {
         name: history_menu
         only_buffer_difference: true
         marker: "󱦟 "
@@ -295,14 +328,27 @@ $env.config = {
   keybindings: [
     {
       name: completion_menu
-      modifier: none
-      keycode: tab
+      modifier: control
+      keycode: char_n
       mode: [emacs vi_normal vi_insert]
       event: {
         until: [
           { send: menu name: completion_menu }
           { send: menunext }
         ]
+      }
+    }
+    {
+      name: ide_completion_menu
+      modifier: none
+      keycode: tab
+      mode: [emacs vi_normal vi_insert]
+      event: {
+          until: [
+              { send: menu name: ide_completion_menu }
+              { send: menunext }
+              { edit: complete }
+          ]
       }
     }
     {
@@ -465,5 +511,6 @@ source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
 source broot.nu
 source parallel.nu
+source commands.nu
 
 source alias.nu # must be called after init of all plugins. Eg. zoxide init!
