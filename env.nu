@@ -32,7 +32,7 @@ $env.NU_PLUGIN_DIRS = [
 # Configuration
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
-$env.NVIM_DEV_PATH = "~/Desktop/git_repos/jonas"
+$env.NVIM_DEV_PATH = "~/Documents/Git"
 
 # Bun
 $env.BUN_INSTALL = $"($env.HOME)/.bun"
@@ -56,6 +56,7 @@ $env.PATH = (
         | append $"($env.HOME)/.yarn/bin"
         | append $"($env.HOME)/Library/pnpm" # macos
         | append $"($env.HOME)/go/bin"
+        | append $"($env.HOME)/Library/Python/3.9/bin"
         | uniq
 )
 
