@@ -37,6 +37,9 @@ $env.NVIM_DEV_PATH = "~/Documents/Git"
 # Bun
 $env.BUN_INSTALL = $"($env.HOME)/.bun"
 
+# Pnpm
+$env.PNPM_HOME = $"($env.HOME)/.local/share/pnpm"
+
 $env.PATH = (
     $env.PATH
         | split row (char esep)
@@ -57,6 +60,7 @@ $env.PATH = (
         | append $"($env.HOME)/Library/pnpm" # macos
         | append $"($env.HOME)/go/bin"
         | append $"($env.HOME)/Library/Python/3.9/bin"
+        | append $env.PNPM_HOME
         | uniq
 )
 
