@@ -2,6 +2,7 @@
 alias rcd = cd
 alias cat = bat
 alias exa = exa --icons
+alias explore = explore --peek
 
 def "lsg" [] {
   ls | sort-by type name -i | grid -c
