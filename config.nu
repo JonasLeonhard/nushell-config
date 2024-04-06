@@ -509,7 +509,6 @@ source zellij-completions.nu
 source zellij.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
-source broot.nu
 source parallel.nu
 source commands.nu
 
