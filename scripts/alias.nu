@@ -1,5 +1,6 @@
 # Aliases
 alias rcd = cd
+alias cdi = zi
 alias cat = bat
 alias exa = exa --icons
 alias explore = explore --peek
