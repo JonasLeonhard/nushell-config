@@ -170,9 +170,7 @@ $env.config = {
     }]
     env_change: {
       PWD: [{ |before, after|
-        if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
-          fnm use
-        }
+        null
       }]
     }
     display_output: {||
@@ -529,14 +527,16 @@ $env.config = {
   ]
 }
 
-source fnm.nu
+source commands.nu
+source parallel.nu
 source prompt_indicator.nu
 source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), 'scripts', 'secrets.nu'] | str join '/') , contains private env vars etc.
-source zellij-completions.nu
-source zellij.nu
+
+# These sources are build in env.nu!
+source ~/.cache/mise/init.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
-source parallel.nu
-source commands.nu
 
-source alias.nu # must be called after init of all plugins. Eg. zoxide init!
+
+# !must be called after init of all plugins. Eg. zoxide init!
+source alias.nu

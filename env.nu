@@ -63,13 +63,22 @@ $env.PATH = (
         | append $env.PNPM_HOME
         | uniq
 )
+# ----------------------------------------------------------------
 
-# .env - Starship prompt (starship.rs)
 $env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
+if (not ('~/.cache/starship/init.nu' | path exists)) {
+    mkdir ~/.cache/starship;
+    'print "starship init.nu missing."' | save ~/.cache/starship/init.nu;
+} # starship init nu | save -f ~/.cache/starship/init.nu
 
-# .env - Zoxide (https://github.com/ajeetdsouza/zoxide)
-# install via cargo install --git https://github.com/ajeetdsouza/zoxide - the brew or cargo install version has a old version of the init.nu script
-# mkdir ~/.cache/zoxide
-# zoxide init nushell | save -f ~/.cache/zoxide/init.nu
+if (not ('~/.cache/mise/init.nu' | path exists)) {
+    mkdir ~/.cache/mise;
+    'print "mise init.nu missing."' | save ~/.cache/mise/init.nu;
+} # ~/.local/bin/mise activate | save -f ~/.cache/mise/init.nu
+
+
+if (not ('~/.cache/zoxide/init.nu' | path exists)) {
+    mkdir ~/.zoxide/zoxide;
+    'print "zoxide init.nu missing."' | save ~/.cache/zoxide/init.nu;
+} # zoxide init nushell | save -f ~/.cache/zoxide/init.nu
+
