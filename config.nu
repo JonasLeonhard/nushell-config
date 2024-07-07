@@ -531,6 +531,7 @@ source commands.nu
 source parallel.nu
 source prompt_indicator.nu
 source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), 'scripts', 'secrets.nu'] | str join '/') , contains private env vars etc.
+source zellij.nu
 
 # These sources are build in env.nu!
 source ~/.cache/mise/init.nu
