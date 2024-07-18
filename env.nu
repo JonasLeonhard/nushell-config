@@ -40,6 +40,10 @@ $env.BUN_INSTALL = $"($env.HOME)/.bun"
 # Pnpm
 $env.PNPM_HOME = $"($env.HOME)/.local/share/pnpm"
 
+# Zvm
+$env.ZVM_INSTALL = $"($env.HOME)/.zvm/self"
+
+
 $env.PATH = (
     $env.PATH
         | split row (char esep)
@@ -47,7 +51,9 @@ $env.PATH = (
         | append "/opt/homebrew/bin" # macos
         | append "/usr/bin"
         | append "/usr/local/bin"
-        | append "/usr/local/go/bin"
+        | append "/usr/local/go/bin" # go
+        | append $"($env.HOME)/.zvm/bin" # zvm
+        | append $"($env.ZVM_INSTALL)/" # zvm
         | append "/usr/local/sbin"
         | append "/opt/local/bin"
         | append "/usr/sbin"
