@@ -124,7 +124,7 @@ $env.config = {
     vi_normal: block # block, underscore, line, blink_block, blink_underscore, blink_line (underscore is the default)
   }
   color_config: (theme)
-  footer_mode: "25" # always, never, number_of_rows, auto
+  footer_mode: auto # always, never, number_of_rows, auto
   float_precision: 2 # the precision for displaying floats in tables
   # buffer_editor: "nvim" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
