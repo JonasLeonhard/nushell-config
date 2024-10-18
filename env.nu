@@ -51,6 +51,8 @@ $env.PATH = (
         | append "/usr/local/sbin"
         | append "/opt/local/bin"
         | append "/usr/sbin"
+        | append $"($env.HOME)/.zvm/bin" # zvm
+        | append $"($env.HOME)/.zvm/self/" # zvm
         | append $"($env.HOME)/.local/share/nvim/mason/bin" # neovim mason installed binaries
         | append $"($env.BUN_INSTALL)/bin"
         | append $"($env.HOME)/.cargo/bin"
