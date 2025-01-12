@@ -64,6 +64,7 @@ $env.PATH = (
         | append $"($env.HOME)/Library/pnpm" # macos
         | append $"($env.HOME)/go/bin"
         | append $"($env.HOME)/Library/Python/3.9/bin"
+        | append "/Applications/Ghostty.app/Contents/MacOS/"
         | append $env.PNPM_HOME
         | uniq
 )
