@@ -441,6 +441,16 @@ $env.config = {
     },
     # Custom Keybindings
     {
+      name: fzf_zellija
+      modifier: none
+      keycode: char_ø # workaround for alt-e
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: executehostcommand,
+        cmd: "zellija"
+      }
+    }
+    {
       name: accept_history_hint_completion
       modifier: control
       keycode: char_l
@@ -495,6 +505,23 @@ $env.config = {
         cmd: "clear"
       }
     }
+    {
+      name: gitui
+      modifier: control
+      keycode: char_g # workaround for alt-e
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: executehostcommand,
+        cmd: "gitui"
+      }
+    }
+    {
+      name: zoxide_menu
+      modifier: control
+      keycode: char_z
+      mode: [emacs, vi_normal, vi_insert]
+      event: { send: menu name: zoxide_menu }
+    },
   ]
 }
 
@@ -502,6 +529,7 @@ source commands.nu
 source parallel.nu
 source prompt_indicator.nu
 source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), 'scripts', 'secrets.nu'] | str join '/') , contains private env vars etc.
+source zellij.nu
 
 # These sources are build in env.nu!
 source ~/.cache/mise/init.nu
