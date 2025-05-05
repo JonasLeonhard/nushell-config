@@ -532,6 +532,7 @@ source secrets.nu # Create a empty one with: touch ([($nu.default-config-dir), '
 source zellij.nu
 
 # These sources are build in env.nu!
+source ~/.cache/mise/init.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
 

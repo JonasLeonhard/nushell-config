@@ -76,6 +76,11 @@ if (not ('~/.cache/starship/init.nu' | path exists)) {
     'print "starship init.nu missing."' | save ~/.cache/starship/init.nu;
 } # starship init nu | save -f ~/.cache/starship/init.nu
 
+if (not ('~/.cache/mise/init.nu' | path exists)) {
+    mkdir ~/.cache/mise;
+    'print "mise init.nu missing."' | save ~/.cache/mise/init.nu;
+} # mise activate nu | save -f ~/.cache/mise/init.nu
+
 if (not ('~/.cache/zoxide/init.nu' | path exists)) {
     mkdir ~/.zoxide/zoxide;
     'print "zoxide init.nu missing."' | save ~/.cache/zoxide/init.nu;
